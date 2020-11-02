@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Contact</h1>
+  <form action="/contact" method="get">
+    <input type="text" name="member" placeholder="Who are you looking for?" class='form-control'
+    value="<%= params[:member] %>">
+    <input type="submit" class='btn btn-primary'>
+  </form>
+  <!-- er + tab -->
+  <% Time.now %>
+  <!-- pe + tab -->
+  <h4>Team:</h4>
+  <ol>
+    <% @members.each do |member|  %>
+      <li><%= member.capitalize %></li>
+    <% end %>
+  </ol>
+  <!-- <a href="/">Home</a> -->
+  <%= link_to 'home', root_path, class: 'btn btn-primary' %>
+  <%= link_to root_path, class: 'btn' do %>
+    <!-- some font awesome icon here -->
+    👋
+  <% end %>
+</div>
